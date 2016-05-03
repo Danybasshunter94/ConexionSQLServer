@@ -12,6 +12,7 @@ public class AccesoDatoSQLServer {
 
 	private Connection con;
 	
+	//Conexion Simple para la base de datos
 	public void getConexion() {
 		try {
 			con = DriverManager.
@@ -35,6 +36,7 @@ public class AccesoDatoSQLServer {
 		 
 	}
 	
+	//Esta es la consulta
 	public ArrayList<ArrayList<String>> getRegistrosTablaBD(String tabla, String bd) {
 		ArrayList<ArrayList<String>> lista = new ArrayList<>();
 		this.getConexion();
@@ -63,6 +65,7 @@ public class AccesoDatoSQLServer {
 		return lista;
 	}
 	
+	//ArrayList para mostar los resultados de la consulta
 	public void mostrarTablaBD(ArrayList<ArrayList<String>> arrayList){
 		for(int i=0; i < arrayList.size(); i++){
 			for(int j=0; j < arrayList.get(i).size(); j++){
